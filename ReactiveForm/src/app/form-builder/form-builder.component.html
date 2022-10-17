@@ -1,0 +1,54 @@
+<form class="form-control" [formGroup]="studentform" (ngSubmit)="onSubmit()">
+    <div class="row g-3">
+        <div class="col">
+            <label for="first-name">First name: </label>
+            <input class="form-control" type="text" id="firstName" formControlName="firstName">
+        </div>
+        <div class="col">
+            <label for="last-name">Last name: </label>
+            <input class="form-control" type="text" id="lastName" formControlName="lastName">
+        </div>
+    </div>
+
+    <div formGroupName="address">
+        <h2>Address</h2>
+
+        <div class="row g-3">
+            <div class="col">
+                <label for="street">Street: </label>
+                <input class="form-control" id="street" type="text" formControlName="street">
+            </div>
+            <div class="col">
+                <label for="city">City: </label>
+                <input class="form-control" id="city" type="text" formControlName="city">
+            </div>
+        </div>
+        <div class="row g-3">
+            <div class="col">
+                <label for="state">State: </label>
+                <input class="form-control" id="state" type="text" formControlName="state">
+            </div>
+            <div class="col">
+                <label for="zip">Zip Code: </label>
+                <input class="form-control" id="zip" type="text" formControlName="zip">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <p>Form Status: {{ studentform.status }}</p>
+    <p>{{ studentform.value | json }}</p>
+    <hr>
+
+    <p>Complete the form to enable button.</p>
+    <button class="btn btn-success" type="submit" [disabled]="!studentform.valid">Submit</button>
+    <button class="btn btn-primary" type="button" (click)="updateForm()">Update Form</button>
+
+    <!-- NOTE:
+By this [disabled]:button is bind to validation it will allow Submit only after validating full form. -->
+
+</form>
+
+<!-- Using the FormBuilder service to generate controls:
+    Import the FormBuilder class.
+    Inject the FormBuilder service.
+    Generate the form contents. -->
