@@ -1,0 +1,32 @@
+<form class="form-control" [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+        <label class="col-form-label" for="first-name">First name: </label>
+        <input class="form-control" type="text" id="firstName" formControlName="firstName">
+    </div>
+
+    <div class="mb-3">
+        <label class="col-form-label" for="last-name">Last name: </label>
+        <input class="form-control" type="text" id="lastName" formControlName="lastName">
+    </div>
+
+    <p>Complete the form to enable button.</p>
+    <button class="btn btn-primary" type="submit" [disabled]="!studentForm.valid">Submit</button>
+ <hr><p>Json Data: {{studentForm.value|json}}</p>
+    <!-- NOTE:
+By this [disabled]:button is bind to validation it will allow Submit only after validating full form. -->
+
+</form>
+
+<!-- 
+<form [formGroup]="formName">
+<input formControl="formcontrolName">
+<input formControl="formcontrolName">
+.
+.
+.
+</form> 
+-->
+
+<!-- Save form data
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()"></form> -->
