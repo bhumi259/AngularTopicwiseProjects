@@ -1,0 +1,6 @@
+<app-bhumika-item-detail [item]="currentItem"></app-bhumika-item-detail>
+<!-- here we have bind property in [] and target it -->
+<app-bhumika-child (newItemEvent)="addItem($event)"></app-bhumika-child>
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
