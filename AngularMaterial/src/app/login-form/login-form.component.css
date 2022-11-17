@@ -1,0 +1,18 @@
+.mat-mdc-form-field {
+    display: block;
+    text-align: left;
+  }
+
+.example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+
+  .form-material{
+    margin-top: 130px;
+  }
+  
+  .button-submit{
+    text-align: center;
+  }
+
